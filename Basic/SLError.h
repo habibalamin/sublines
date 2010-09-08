@@ -24,7 +24,8 @@ typedef	enum {
 	SLFileAlreadyOpened = 11,
 	
 	SLUnableToUnzip = 12,
-	SLNoSubtitlesReceived = 13
+	SLNoSubtitlesReceived = 13,
+	SLNoSubtitleFoundAppropriate = 14
 } SLResult;
 
 @interface SLError : NSError {

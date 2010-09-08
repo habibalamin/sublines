@@ -25,7 +25,7 @@
 
 - (void)imdbLookupForId:(NSString*)imdbId;
 - (void)loadImage:(NSString*)imgUrl;
-
+- (void)openMediaFile:(NSString*)file;
 - (void)loadNextPoster;
 - (void)loadPreviousPoster;
 - (void)updatePosterButtons;
@@ -34,6 +34,8 @@
 
 - (void)updateActivityDescription:(NSString*)description;
 - (NSError*)calculateSublightHash:(NSString*)targetFile;
+- (void)hideSearchResults:(BOOL)hide animate:(BOOL)animate;
+- (int)calcSubtitleRankIsLinked:(BOOL)linked downloads:(int)downloads rating:(int)rating votes:(int)votes;
 
 - (id)tableValueSubtitlesForRow:(int)rowIndex Column:(int)colIndex;
 - (NSString*)prettyTimeIntervalStringFromMinutes:(int)totalMins;
@@ -44,6 +46,7 @@
 @implementation SublinesAppDelegate
 
 @synthesize window;
+@synthesize windowAbout;
 @synthesize activityIndicator;
 @synthesize labelActivity;
 @synthesize labelMovieTitle;
@@ -60,8 +63,21 @@
 @synthesize labelAdult;
 @synthesize labelLength;
 
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+	[self openMediaFile:filename];
+	return true;
+}
+
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+	DLog(@"Application will finished loading.");
+	tableSubtitlesHeight = [tableSubtitles frame].size.height;
+	[self hideSearchResults:YES animate:NO];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	DLog(@"Application finished loading.");
+	
+	working = NO;
 	
 	[self.window setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
 	[self.window setContentBorderThickness:28 forEdge: NSMinYEdge];
@@ -89,11 +105,6 @@
 	
 	[self clearInfo];
 	[self loginAnonymous];
-	/*NSString *fc = [[NSString alloc] initWithContentsOfFile:@"/Users/hemantjangid/Desktop/Base64.txt"];
-	NSData *d = [NSData dataFromBase64String:fc];
-	NSString *fs = [d asciiString];
-	DLog (@"Contents: %@", fs);
-	[fc release];*/
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -171,7 +182,70 @@
 }
 
 - (IBAction)buttonPressedSearchSubtitles:(id)sender {
+	userIsFeelingLucky = NO;
 	[self searchByHash];
+}
+
+- (IBAction)buttonPressedImFeelingLucky:(id)sender {
+	userIsFeelingLucky = YES;
+	[self searchByHash];
+}
+
+- (IBAction)menuFileOpen:(id)sender {
+	NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+	[openDlg setCanChooseFiles:YES];
+	[openDlg setCanChooseDirectories:NO];
+	[openDlg beginSheetModalForWindow:self.window
+					completionHandler:^(NSInteger result) {
+						if (result == NSOKButton) {
+							if ([[openDlg filenames] count] > 1) {
+								NSError *error = [SLError errorWithCode:SLTooManyFilesDragged];
+								[self showError:error];
+								return;
+							}
+							[self openMediaFile:[openDlg filename]];
+						}
+					}];
+}
+
+- (IBAction)showAbout:(id)sender {
+    [NSApp beginSheet:windowAbout
+       modalForWindow:window
+        modalDelegate:nil
+       didEndSelector:NULL
+          contextInfo:NULL];
+}
+
+- (IBAction)endAbout:(id)sender {
+	// Return to normal event handling
+	[NSApp endSheet:windowAbout];
+	
+	// Hide the sheet
+	[windowAbout orderOut:sender];	
+}
+
+- (IBAction)openUrl:(id)sender {
+	int tag = [sender tag];
+	NSURL *url = nil;
+	switch (tag) {
+		case 0:
+			url = [NSURL URLWithString:@"http://code.google.com/p/sublines/"];
+			[[NSWorkspace sharedWorkspace] openURL:url];
+			break;
+		case 1:
+			url = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=sublines%2eteam%40gmail%2ecom&lc=US&item_name=Sublines&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest"];
+			[[NSWorkspace sharedWorkspace] openURL:url];
+			[self endAbout:self];
+			break;
+		case 2:
+			url = [NSURL URLWithString:@"http://www.sublight.si/"];
+			[[NSWorkspace sharedWorkspace] openURL:url];
+			break;
+		case 3:
+			url = [NSURL URLWithString:@"http://www.themoviedb.org/"];
+			[[NSWorkspace sharedWorkspace] openURL:url];
+			break;
+	}
 }
 
 #pragma mark Table handlers
@@ -242,6 +316,7 @@
 }
 
 - (void)clearInfo {
+	[self hideSearchResults:YES animate:YES];
 	[targetFile setString:@""];
 	[movieInfo release];
 	movieInfo = nil;
@@ -254,6 +329,9 @@
 	[textViewMovieOverview setStringValue:@""];
 	currentIndex = -1;
 	[buttonMoviePoster setImage:imageUnknown];
+	[buttonMoviePoster setEnabled:NO];
+	[buttonImagePrev setEnabled:NO];
+	[buttonImageNext setEnabled:NO];
 	[buttonImFeelingLucky setEnabled:NO];
 	[buttonSearchSubtitles setEnabled:NO];
 	[subtitles removeAllObjects];
@@ -322,6 +400,9 @@
 		[self showError:error];
 		return NO;
 	}
+	
+	if (working)
+		return NO;
 	
 	DLog(@"Perform drag operation on file: %@", [fileList objectAtIndex:0]);
 	[self openMediaFile:[fileList objectAtIndex:0]];
@@ -419,10 +500,43 @@
 	}
 	
 	[subtitles addObjectsFromArray:[response subtitleList]];
-	[tableSubtitles reloadData];
-	
+
 	for (id st in [subtitles objectEnumerator])
 		DLog (@"%@", st);
+
+	if (!userIsFeelingLucky) {
+		[self hideSearchResults:NO animate:YES];
+		[tableSubtitles reloadData];
+	}
+	else {
+		//select a subtitle automatically and download it
+		int highestRank = -1;
+		int highestRankIndex = -1;
+		
+		for (int i=0; i < [subtitles count]; i++) {
+			id st = [subtitles objectAtIndex:i];
+			
+			BOOL linked = [[st objectForKey:@"IsLinked"] isEqualToString:@"true"];
+			int downloads = [[st objectForKey:@"Downloads"] intValue];
+			int rating = (int) ([[st objectForKey:@"Rate"] doubleValue]);
+			int votes = [[st objectForKey:@"Votes"] intValue];
+			int itemRank = [self calcSubtitleRankIsLinked:linked downloads:downloads rating:rating votes:votes];
+			
+			if (itemRank > highestRank) {
+				highestRank = itemRank;
+				highestRankIndex = i;
+			}
+		}
+		
+		if (highestRankIndex < 0) {
+			NSError* error = [SLError errorWithCode:SLNoSubtitleFoundAppropriate];
+			[self showError:error];
+			return;
+		}
+		
+		[subtitleId setString:[[subtitles objectAtIndex:highestRankIndex] objectForKey:@"SubtitleID"]];
+		[self getDownloadTicket];
+	}
 }
 
 - (void)getDownloadTicketDoneWithClient:(SLSublightClient *)client 
@@ -438,7 +552,7 @@
 	
 	[ticket setString:[response ticket]];
 	
-	NSString* activity = [NSString stringWithFormat:@"Scheduling download after %d seconds...", [response queue]];
+	NSString* activity = [NSString stringWithFormat:@"Download will start in %d seconds...", [response queue]];
 	[self updateActivityDescription:activity];
 	[NSTimer scheduledTimerWithTimeInterval: [response queue]
 											 target: self
@@ -515,13 +629,16 @@
 	[dateFormat setDateStyle:NSDateFormatterMediumStyle];
 
 	[labelMovieTitle setStringValue:movieInfo.movieName];
-	[levelRating setDoubleValue:1];//movieInfo.rating];
+	[levelRating setDoubleValue:movieInfo.rating];
 	[labelReleased setStringValue:[dateFormat stringFromDate:movieInfo.released]];
 	[labelCertification setStringValue:movieInfo.certification];
 	[labelAdult setStringValue:movieInfo.isAdult? @"Yes": @"No"];
 	[labelLength setStringValue:[self prettyTimeIntervalStringFromMinutes:movieInfo.runtime]];
 	[textViewMovieOverview setStringValue:movieInfo.overview];
 
+	[buttonMoviePoster setEnabled:YES];
+	[buttonImagePrev setEnabled:YES];
+	[buttonImageNext setEnabled:YES];
 	[buttonImFeelingLucky setEnabled:YES];
 	[buttonSearchSubtitles setEnabled:YES];
 	[self.window makeFirstResponder:buttonImFeelingLucky];
@@ -644,13 +761,13 @@
 		[sublightHash setString:@""];
 		for (int j=0; j<26; j++)
 			[sublightHash appendFormat:@"%02x", binaryHash[j]];
-		
-		return nil;
 	}
 	@finally {
 		[mi release];
 		[fi release];		
 	}
+	
+	return nil;
 }
 
 - (NSString*)prettyTimeIntervalStringFromMinutes:(int)totalMins {
@@ -665,5 +782,35 @@
 	return [NSString stringWithFormat:@"%@, %@", hoursString, minssString];
 }
 
+- (void)hideSearchResults:(BOOL)hide animate:(BOOL)animate {
+	if (hide == [tableSubtitles isHidden])
+		return;
+	
+    NSRect frame = [self.window frame];
+    
+    CGFloat sizeChange = tableSubtitlesHeight + 20;
+	
+    switch (hide) {
+        case NO:
+            [tableSubtitles setHidden:NO];
+            frame.size.height += sizeChange;
+            frame.origin.y -= sizeChange;
+            break;
+			
+        case YES:
+            [tableSubtitles setHidden:YES];
+            frame.size.height -= sizeChange;
+            frame.origin.y += sizeChange;
+            break;
+			
+        default:
+            break;
+    }
+    [window setFrame:frame display:YES animate:animate];
+}
+
+- (int)calcSubtitleRankIsLinked:(BOOL)linked downloads:(int)downloads rating:(int)rating votes:(int)votes {
+	return (linked? 500: 0) + downloads + (rating * 20);
+}
 
 @end

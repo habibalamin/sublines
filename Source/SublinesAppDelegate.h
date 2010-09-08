@@ -10,6 +10,7 @@
 
 @interface SublinesAppDelegate : NSObject <NSApplicationDelegate, SLSublightDelegate, SLTmdbDelegate, NSWindowDelegate, NSTableViewDelegate, NSTableViewDataSource> {
     NSWindow *window;
+	NSWindow *windowAbout;
 	NSImage *imageUnknown;
 	NSButton *buttonImageNext;
 	NSButton *buttonImagePrev;
@@ -38,14 +39,26 @@
 	int currentIndex;
 	SLTmdbMovieInfo *movieInfo;
 	NSMutableArray *subtitles;
+	int tableSubtitlesHeight;
+	BOOL userIsFeelingLucky;
+	
+	BOOL working;
 }
 
 - (IBAction)buttonPressedImageNext:(id)sender;
 - (IBAction)buttonPressedImagePrev:(id)sender;
 - (IBAction)buttonPressedImage:(id)sender;
 - (IBAction)buttonPressedSearchSubtitles:(id)sender;
+- (IBAction)buttonPressedImFeelingLucky:(id)sender;
+
+- (IBAction)showAbout:(id)sender;
+- (IBAction)endAbout:(id)sender;
+- (IBAction)openUrl:(id)sender;
+
+- (IBAction)menuFileOpen:(id)sender;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSWindow *windowAbout;
 @property (assign) IBOutlet NSProgressIndicator *activityIndicator;
 @property (assign) IBOutlet NSTextField *labelActivity;
 @property (assign) IBOutlet NSTextField *labelMovieTitle;

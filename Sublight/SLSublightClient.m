@@ -56,10 +56,14 @@
 }
 
 - (void)requestSoapAction:(NSString*)soapAction ofType:(SublightAction)actionType withData:(NSData*)soapData {
-	DLog(@"Requesting data: %@", [soapData asciiString]);
-
+#ifdef DEBUG
 	assert (currentAction == SublightActionNone);
+#elif
+	if (currentAction != SublightActionNone)
+		return;
+#endif
 	
+	DLog(@"Requesting data: %@", [soapData asciiString]);
 	currentAction = actionType;
 
 	NSURL *url = [NSURL URLWithString:WS_URL];

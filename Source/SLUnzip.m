@@ -117,6 +117,8 @@ NSInteger sort(id a, id b, void* p) {
 			NSString *src = [NSString stringWithFormat:@"%@/%@", destPath, [subtitleFiles objectAtIndex:0]];
 			NSString *dst = [NSString stringWithFormat:@"%@.%@", [mediaFile stringByDeletingPathExtension], ext];
 			
+			//Remove the target file if exists. Don't bother about the error.
+			[fm removeItemAtPath:dst error:NULL];
 			success = [fm copyItemAtPath:src toPath:dst error:&error];
 			if (!success)
 				return error;

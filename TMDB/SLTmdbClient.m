@@ -38,10 +38,14 @@
 }
 
 - (void)requestAction:(NSString*)soapAction ofType:(TmdbAction)actionType {
-	DLog(@"Requesting action: %@", soapAction);
-	
+#ifdef DEBUG	
 	assert (currentAction == TmdbActionNone);
+#elif
+	if (currentAction != TmdbActionNone)
+		return;
+#endif
 	
+	DLog(@"Requesting action: %@", soapAction);
 	currentAction = actionType;
 	
 	NSURL *url = [NSURL URLWithString:soapAction];

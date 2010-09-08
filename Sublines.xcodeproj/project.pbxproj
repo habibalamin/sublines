@@ -29,8 +29,6 @@
 		6F174B5E123165AD00059199 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F174B59123165AD00059199 /* SBJsonWriter.m */; };
 		6F18611F123008C100069CB3 /* SLError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F18611E123008C100069CB3 /* SLError.m */; };
 		6F25F28612320EE900980623 /* SLTmdbMovieInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25F28512320EE900980623 /* SLTmdbMovieInfo.m */; };
-		6F25F2C91232238E00980623 /* SLTmdbImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25F2C81232238E00980623 /* SLTmdbImage.m */; };
-		6F25F2CC123225CC00980623 /* SLTmdbImageGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25F2CB123225CC00980623 /* SLTmdbImageGroup.m */; };
 		6F25F36212323E0700980623 /* SLMoviePoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25F36112323E0700980623 /* SLMoviePoster.m */; };
 		6F25F369123245DD00980623 /* ImageUnknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F25F368123245DD00980623 /* ImageUnknown.png */; };
 		6F5929E51237813D00EDFC02 /* Arrow-Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEDF27712352DFC003D2E7B /* Arrow-Forward.png */; };
@@ -108,10 +106,6 @@
 		6F18611E123008C100069CB3 /* SLError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLError.m; sourceTree = "<group>"; };
 		6F25F28412320EE900980623 /* SLTmdbMovieInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTmdbMovieInfo.h; sourceTree = "<group>"; };
 		6F25F28512320EE900980623 /* SLTmdbMovieInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTmdbMovieInfo.m; sourceTree = "<group>"; };
-		6F25F2C71232238E00980623 /* SLTmdbImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTmdbImage.h; sourceTree = "<group>"; };
-		6F25F2C81232238E00980623 /* SLTmdbImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTmdbImage.m; sourceTree = "<group>"; };
-		6F25F2CA123225CC00980623 /* SLTmdbImageGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTmdbImageGroup.h; sourceTree = "<group>"; };
-		6F25F2CB123225CC00980623 /* SLTmdbImageGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTmdbImageGroup.m; sourceTree = "<group>"; };
 		6F25F36012323E0700980623 /* SLMoviePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMoviePoster.h; sourceTree = "<group>"; };
 		6F25F36112323E0700980623 /* SLMoviePoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMoviePoster.m; sourceTree = "<group>"; };
 		6F25F368123245DD00980623 /* ImageUnknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageUnknown.png; sourceTree = "<group>"; };
@@ -262,10 +256,6 @@
 				6F174B4812315ECB00059199 /* SLTmdbDelegate.h */,
 				6F25F28412320EE900980623 /* SLTmdbMovieInfo.h */,
 				6F25F28512320EE900980623 /* SLTmdbMovieInfo.m */,
-				6F25F2C71232238E00980623 /* SLTmdbImage.h */,
-				6F25F2C81232238E00980623 /* SLTmdbImage.m */,
-				6F25F2CA123225CC00980623 /* SLTmdbImageGroup.h */,
-				6F25F2CB123225CC00980623 /* SLTmdbImageGroup.m */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -463,8 +453,6 @@
 				6F174B5D123165AD00059199 /* SBJsonParser.m in Sources */,
 				6F174B5E123165AD00059199 /* SBJsonWriter.m in Sources */,
 				6F25F28612320EE900980623 /* SLTmdbMovieInfo.m in Sources */,
-				6F25F2C91232238E00980623 /* SLTmdbImage.m in Sources */,
-				6F25F2CC123225CC00980623 /* SLTmdbImageGroup.m in Sources */,
 				6F25F36212323E0700980623 /* SLMoviePoster.m in Sources */,
 				6F0791BD1233BD62002C3957 /* SLSearchResponse.m in Sources */,
 				6F0791D11233C0C0002C3957 /* SLSearchRequest.m in Sources */,
@@ -508,8 +496,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Sublines_Prefix.pch;
-				INFOPLIST_FILE = "Resources/Sublines-Info.plist";
+				GCC_PREFIX_HEADER = Source/Sublines.pch;
+				INFOPLIST_FILE = "Sublines-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

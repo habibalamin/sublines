@@ -39,6 +39,7 @@
 		case SLFileAlreadyOpened: return @"This file is already open.";
 		case SLUnableToUnzip: return @"Unzip operation failed.";
 		case SLNoSubtitlesReceived: return @"No subtitles found in the package.";
+		case SLNoSubtitleFoundAppropriate: return @"No subtitle found appropriate for you.";
 			
 		default:
 			return [super localizedDescription];
@@ -74,6 +75,7 @@
 		case SLFileAlreadyOpened: return @"Try a different file.";
 		case SLUnableToUnzip: return @"Try a different subtitle.";
 		case SLNoSubtitlesReceived: return @"Try a different subtitle.";
+		case SLNoSubtitleFoundAppropriate: return @"Search subtitles and pick one manually.";
 
 		default:
 			return [super localizedRecoverySuggestion];

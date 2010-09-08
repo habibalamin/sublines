@@ -90,14 +90,11 @@
 			
 			int hours, minutes, seconds, msecs;
 			
-			if(sscanf(durationString, "%d:%d:%d.%d", &hours, &minutes, &seconds, &msecs) == 4) {
-				duration = (hours * 60 + minutes) * 60 + seconds + 
-					(msecs > 500? 1: (msecs < 500? 0: (seconds % 2)));
-				return nil; //success
-			}
-			else {
+			if(sscanf(durationString, "%d:%d:%d.%d", &hours, &minutes, &seconds, &msecs) != 4)
 				return [SLError errorWithCode:SLInvalidOutputFromLibrary];
-			}
+			
+			duration = (hours * 60 + minutes) * 60 + seconds + 
+					(msecs > 500? 1: (msecs < 500? 0: (seconds % 2)));
 		}
 		@finally {
 			MediaInfo_Close (miHandle);
@@ -106,6 +103,8 @@
 	@finally {
 		MediaInfo_Delete (miHandle);
 	}
+	
+	return nil;
 }
 
 @end
