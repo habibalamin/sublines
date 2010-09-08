@@ -1,0 +1,373 @@
+POST http://www.sublight.si/API/WS/Sublight.asmx HTTP/1.1
+User-Agent: Sublight;2.0.0
+Content-Type: application/soap+xml; charset=utf-8; action="http://www.sublight.si/SearchSubtitles3"
+Host: www.sublight.si
+Content-Length: 851
+Accept-Encoding: gzip
+Connection: Close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <SearchSubtitles3 xmlns="http://www.sublight.si/">
+            <session>ebe4fc6f-198d-44b6-bb8a-cfa335a9ff96</session>
+            <videoHash>001c8500002bd5c800f7f03a235b0757c5358a32bf4d23eb164c</videoHash>
+            <title>Indiana Jones and the Last Crusade</title>
+            <year>1989</year>
+            <season xsi:nil="true"></season>
+            <episode xsi:nil="true"></episode>
+            <languages>
+                <SubtitleLanguage>English</SubtitleLanguage>
+                <SubtitleLanguage>Hindi</SubtitleLanguage>
+            </languages>
+            <genres>
+                <Genre>Movie</Genre>
+                <Genre>Cartoon</Genre>
+                <Genre>Serial</Genre>
+                <Genre>Documentary</Genre>
+                <Genre>Other</Genre>
+                <Genre>Unknown</Genre>
+            </genres>
+            <rateGreaterThan xsi:nil="true"></rateGreaterThan>
+        </SearchSubtitles3>
+    </soap:Body>
+</soap:Envelope>
+
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Content-Type: application/soap+xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Mon, 16 Aug 2010 09:21:51 GMT
+Connection: close
+Content-Length: 10317
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <SearchSubtitles3Response xmlns="http://www.sublight.si/">
+            <SearchSubtitles3Result>true</SearchSubtitles3Result>
+            <subtitles>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>1</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>7e58fa86-c3bc-4cce-b216-70cc63b6abd1</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>24504</Size>
+                    <Downloads>43</Downloads>
+                    <Votes>1</Votes>
+                    <Reports>0</Reports>
+                    <Rate>4</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2007-10-28T21:16:40.153</Created>
+                    <Year>1989</Year>
+                    <IsLinked>true</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>1</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>4d44a0db-3f2f-47a0-848e-1d3d0191980a</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>24432</Size>
+                    <Downloads>152</Downloads>
+                    <Votes>3</Votes>
+                    <Reports>0</Reports>
+                    <Rate>5</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2008-04-29T10:01:26.213</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>1</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>185ecdd0-ce89-4ec9-a581-d4f37566ac77</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>31150</Size>
+                    <Downloads>37</Downloads>
+                    <Votes>1</Votes>
+                    <Reports>0</Reports>
+                    <Rate>3</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2008-08-23T19:00:05.01</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>1</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>61e25e9f-e217-4bba-9fc4-ad07fe011418</SubtitleID>
+                    <PublisherID>a6e212c6-fc7c-4918-b8ef-ce1dc5421780</PublisherID>
+                    <Publisher>T-X</Publisher>
+                    <Size>24406</Size>
+                    <Downloads>19</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2009-01-19T17:51:48.14</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>36122</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>2</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>9fcb262c-0770-4d57-a940-7273af3e8ec9</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>35985</Size>
+                    <Downloads>13</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2007-10-28T21:16:37.14</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>1</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>7f45b666-e047-4e01-86d9-9e04aee97528</SubtitleID>
+                    <PublisherID>275c3a91-a674-4e5d-adbf-3eb8f79df1d4</PublisherID>
+                    <Publisher>pat4040</Publisher>
+                    <Size>31150</Size>
+                    <Downloads>7</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2010-04-07T02:37:11.647</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>185ecdd0-ce89-4ec9-a581-d4f37566ac77</ParentSubtitleID>
+                    <SubCount>26</SubCount>
+                    <IsSynchronization>true</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>2</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>901ebe6d-a196-4517-b38f-2e7e33659a60</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>31449</Size>
+                    <Downloads>6</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2007-10-28T21:16:18.92</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>2</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>d602711d-47c2-45d2-a8b2-e236e6e26ece</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>36004</Size>
+                    <Downloads>5</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2007-10-28T21:16:33.64</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>2</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>fd283c6f-ca4d-41fd-bdd4-46fbd1ce8255</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>26530</Size>
+                    <Downloads>2</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2007-10-28T21:16:29.983</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+                <Subtitle>
+                    <Title>Indiana Jones and the Last Crusade</Title>
+                    <IMDB>http://www.imdb.com/title/tt0097576</IMDB>
+                    <Language>English</Language>
+                    <SubtitleType>Srt</SubtitleType>
+                    <MediaType>CD</MediaType>
+                    <NumberOfDiscs>2</NumberOfDiscs>
+                    <FPS>NotAvailable</FPS>
+                    <Genre>Movie</Genre>
+                    <SubtitleID>2a1005c4-efe8-4b5f-8193-9f81019a6ce8</SubtitleID>
+                    <PublisherID>2e064686-ad94-463d-acad-63db99cdf373</PublisherID>
+                    <Publisher>T-1000 (not active)</Publisher>
+                    <Size>35953</Size>
+                    <Downloads>2</Downloads>
+                    <Votes>0</Votes>
+                    <Reports>0</Reports>
+                    <Rate>0</Rate>
+                    <Season xsi:nil="true"></Season>
+                    <Episode xsi:nil="true"></Episode>
+                    <Created>2007-10-28T21:16:25.593</Created>
+                    <Year>1989</Year>
+                    <IsLinked>false</IsLinked>
+                    <Status>0</Status>
+                    <CanDelete>false</CanDelete>
+                    <ParentSubtitleID>00000000-0000-0000-0000-000000000000</ParentSubtitleID>
+                    <SubCount>50757</SubCount>
+                    <IsSynchronization>false</IsSynchronization>
+                    <IsHearingImpaired>false</IsHearingImpaired>
+                </Subtitle>
+            </subtitles>
+            <releases>
+                <Release>
+                    <SubtitleID>7f45b666-e047-4e01-86d9-9e04aee97528</SubtitleID>
+                    <ReleaseID>00000000-0000-0000-0000-000000000000</ReleaseID>
+                    <Name>Subtitle Synchronization (original author: T-1000 (not active))</Name>
+                    <FPS>NotSet</FPS>
+                </Release>
+                <Release>
+                    <SubtitleID>4d44a0db-3f2f-47a0-848e-1d3d0191980a</SubtitleID>
+                    <ReleaseID>d09608cd-6fc1-454c-a160-2986166b26ff</ReleaseID>
+                    <Name>Indiana.Jones.And.The.Last.Crusade.1989.aXXo</Name>
+                    <FPS>FPS_25</FPS>
+                </Release>
+                <Release>
+                    <SubtitleID>61e25e9f-e217-4bba-9fc4-ad07fe011418</SubtitleID>
+                    <ReleaseID>7a31a812-d35f-4415-8942-c1664f0d2616</ReleaseID>
+                    <Name></Name>
+                    <FPS>FPS_25</FPS>
+                </Release>
+                <Release>
+                    <SubtitleID>185ecdd0-ce89-4ec9-a581-d4f37566ac77</SubtitleID>
+                    <ReleaseID>ed7b70b9-60e8-4829-b11c-3f603c060272</ReleaseID>
+                    <Name>Indiana.Jones.And.The.Last.Crusade.1989.720p.HDTV.x264-CtrlHD</Name>
+                    <FPS>NotAvailable</FPS>
+                </Release>
+            </releases>
+            <isLimited>false</isLimited>
+        </SearchSubtitles3Response>
+    </soap:Body>
+</soap:Envelope>

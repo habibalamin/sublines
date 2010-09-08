@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <DownloadByID4 xmlns="http://www.sublight.si/">
+            <sessionID>[session]</sessionID>
+            <subtitleID>[subtitleId]</subtitleID>
+            <codePage>-1</codePage>
+            <removeFormatting>false</removeFormatting>
+            <ticket>[ticket]</ticket>
+        </DownloadByID4>
+    </soap:Body>
+</soap:Envelope>

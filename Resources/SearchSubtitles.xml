@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <SearchSubtitles3 xmlns="http://www.sublight.si/">
+            <session>[session]</session>
+            <videoHash>[sublightHash]</videoHash>
+            <title xsi:nil="true"></title>
+            <year xsi:nil="true"></year>
+            <season xsi:nil="true"></season>
+            <episode xsi:nil="true"></episode>
+            <languages>
+                [subtitleLanguages]
+            </languages>
+            <genres>
+                <Genre>Movie</Genre>
+                <Genre>Cartoon</Genre>
+                <Genre>Serial</Genre>
+                <Genre>Documentary</Genre>
+                <Genre>Other</Genre>
+                <Genre>Unknown</Genre>
+            </genres>
+            <rateGreaterThan xsi:nil="true"></rateGreaterThan>
+        </SearchSubtitles3>
+    </soap:Body>
+</soap:Envelope>

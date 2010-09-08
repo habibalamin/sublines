@@ -1,0 +1,40 @@
+POST http://www.sublight.si/API/WS/Sublight.asmx HTTP/1.1
+User-Agent: Sublight;2.0.0
+Content-Type: application/soap+xml; charset=utf-8; action="http://www.sublight.si/GetDownloadTicket2"
+Host: www.sublight.si
+Content-Length: 413
+Accept-Encoding: gzip
+Connection: Close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetDownloadTicket2 xmlns="http://www.sublight.si/">
+            <session>d02f2222-3b99-4e22-95e2-7fdfb56e3f89</session>
+            <id>7e58fa86c3bc4cceb21670cc63b6abd1</id>
+        </GetDownloadTicket2>
+    </soap:Body>
+</soap:Envelope>
+
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Content-Type: application/soap+xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Wed, 01 Sep 2010 12:42:41 GMT
+Connection: close
+Content-Length: 469
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetDownloadTicket2Response xmlns="http://www.sublight.si/">
+            <GetDownloadTicket2Result>true</GetDownloadTicket2Result>
+            <ticket>0e94a187e12f4abfbc7ba97f18e351ca</ticket>
+            <que>0</que>
+            <points>0</points>
+        </GetDownloadTicket2Response>
+    </soap:Body>
+</soap:Envelope>

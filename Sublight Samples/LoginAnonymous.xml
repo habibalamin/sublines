@@ -1,0 +1,55 @@
+POST http://www.sublight.si/API/WS/Sublight.asmx HTTP/1.1
+User-Agent: Sublight;2.0.0
+Content-Type: application/soap+xml; charset=utf-8; action="http://www.sublight.si/LogInAnonymous4"
+Host: www.sublight.si
+Content-Length: 556
+Accept-Encoding: gzip
+Connection: Close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <LogInAnonymous4 xmlns="http://www.sublight.si/">
+            <clientInfo>
+                <ClientId>Sublight;2.0.0</ClientId>
+                <ApiKey>7279092b8abc315f72582ec64f5e729673a0057fd9a54c87b7c09364cf96f63a</ApiKey>
+            </clientInfo>
+            <args>
+                <string>IID=473a4176-aa07-442c-a24a-0dcfff801693</string>
+                <string>AppLanguage=en-US</string>
+            </args>
+        </LogInAnonymous4>
+    </soap:Body>
+</soap:Envelope>
+
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Content-Type: application/soap+xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Mon, 16 Aug 2010 09:10:39 GMT
+Connection: close
+Content-Length: 1150
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <LogInAnonymous4Response xmlns="http://www.sublight.si/">
+            <LogInAnonymous4Result>ebe4fc6f-198d-44b6-bb8a-cfa335a9ff96</LogInAnonymous4Result>
+            <settings>
+                <string>Plugins_SubtitleProvider_Sublight.Plugins.SubtitleProvider.BuiltIn_PodnapisiNet=1.1.2</string>
+                <string>Plugins_SubtitleProvider_Sublight.Plugins.SubtitleProvider.BuiltIn_OpenSubtitles=1.0.6</string>
+                <string>Plugins_SubtitleProvider_Sublight.Plugins.SubtitleProvider.BuiltIn_DivxTitlovi=1.0.4</string>
+                <string>Plugins_SubtitleProvider_Sublight.Plugins.SubtitleProvider.BuiltIn_AllSubs=1.0.1</string>
+                <string>Plugins_SubtitleProvider_Sublight.Plugins.SubtitleProvider.BuiltIn_Subscene=1.0.1</string>
+                <string>HashTranslator=0.9.3</string>
+                <string>Server_Version=1.1.3879.18997</string>
+                <string>Publish.EnableNonImdbSubtitles=0</string>
+                <string>LiveToolbarContent=false</string>
+                <string>EnableMessageBoxWorkAround=0</string>
+            </settings>
+        </LogInAnonymous4Response>
+    </soap:Body>
+</soap:Envelope>

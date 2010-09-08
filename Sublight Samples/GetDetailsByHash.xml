@@ -1,0 +1,48 @@
+POST http://www.sublight.si/API/WS/Sublight.asmx HTTP/1.1
+User-Agent: Sublight;2.0.0
+Content-Type: application/soap+xml; charset=utf-8; action="http://www.sublight.si/GetDetailsByHash"
+Host: www.sublight.si
+Content-Length: 433
+Accept-Encoding: gzip
+Connection: Close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetDetailsByHash xmlns="http://www.sublight.si/">
+            <session>ebe4fc6f-198d-44b6-bb8a-cfa335a9ff96</session>
+            <hash>001c8500002bd5c800f7f03a235b0757c5358a32bf4d23eb164c</hash>
+        </GetDetailsByHash>
+    </soap:Body>
+</soap:Envelope>
+
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Content-Type: application/soap+xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Mon, 16 Aug 2010 09:21:50 GMT
+Connection: close
+Content-Length: 643
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetDetailsByHashResponse xmlns="http://www.sublight.si/">
+            <GetDetailsByHashResult>true</GetDetailsByHashResult>
+            <imdbInfo>
+                <Id>tt0097576</Id>
+                <Title>Indiana Jones and the Last Crusade</Title>
+                <Year>1989</Year>
+                <YearTo xsi:nil="true"></YearTo>
+                <Season xsi:nil="true"></Season>
+                <Episode xsi:nil="true"></Episode>
+                <UserRating xsi:nil="true"></UserRating>
+                <SyncDate xsi:nil="true"></SyncDate>
+                <Genre xsi:nil="true"></Genre>
+            </imdbInfo>
+        </GetDetailsByHashResponse>
+    </soap:Body>
+</soap:Envelope>

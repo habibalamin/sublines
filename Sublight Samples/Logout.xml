@@ -1,0 +1,36 @@
+POST http://www.sublight.si/API/WS/Sublight.asmx HTTP/1.1
+User-Agent: Sublight;2.0.0
+Content-Type: application/soap+xml; charset=utf-8; action="http://www.sublight.si/LogOut"
+Host: www.sublight.si
+Content-Length: 348
+Accept-Encoding: gzip
+Connection: Close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <LogOut xmlns="http://www.sublight.si/">
+            <session>9075c22a-94bc-4beb-b4fb-c81e28b46ad9</session>
+        </LogOut>
+    </soap:Body>
+</soap:Envelope>
+
+HTTP/1.1 200 OK
+Cache-Control: private, max-age=0
+Content-Type: application/soap+xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Wed, 01 Sep 2010 12:45:47 GMT
+Connection: close
+Content-Length: 342
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <LogOutResponse xmlns="http://www.sublight.si/">
+            <LogOutResult>true</LogOutResult>
+        </LogOutResponse>
+    </soap:Body>
+</soap:Envelope>
