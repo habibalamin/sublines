@@ -264,7 +264,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>6F5929B612377DBD00EDFC02</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -272,8 +272,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
-									<integer>2</integer>
+									<integer>17</integer>
+									<integer>9</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SublinesAppDelegate.m</string>
+								<string>SLSublightClient.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SublinesAppDelegate.m</string>
+										<string>SLSublightClient.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>6F382FB91237D4C100655DB4</string>
+										<string>6F382FD51237DB0F00655DB4</string>
 										<key>history</key>
 										<array>
 											<string>6F592A621237875300EDFC02</string>
@@ -345,11 +345,11 @@
 											<string>6F382E7E1237925800655DB4</string>
 											<string>6F382F2F1237A93100655DB4</string>
 											<string>6F382F301237A93100655DB4</string>
-											<string>6F382F7B1237B66B00655DB4</string>
 											<string>6F382F7C1237B66B00655DB4</string>
 											<string>6F382FA81237C26200655DB4</string>
 											<string>6F382FB41237CEDB00655DB4</string>
-											<string>6F382FAE1237CDFD00655DB4</string>
+											<string>6F382FCD1237DA9100655DB4</string>
+											<string>6F382FCE1237DA9100655DB4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -547,12 +547,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>6F382FD61237DB0F00655DB4</string>
 		<string>6F382E3B12378BBC00655DB4</string>
 		<string>6F382E3C12378BBC00655DB4</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>6FCCE75F122E837C00FA053E</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/hemantjangid/Documents/Playground/Sublines/Sublines.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>113 107 1195 639 0 0 1360 746 </string>
@@ -571,12 +572,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SublinesAppDelegate.m</string>
+								<string>SLTmdbClient.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -593,8 +596,6 @@
 							<string>415pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

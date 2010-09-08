@@ -40,7 +40,7 @@
 - (void)requestAction:(NSString*)soapAction ofType:(TmdbAction)actionType {
 #ifdef DEBUG	
 	assert (currentAction == TmdbActionNone);
-#elif
+#else
 	if (currentAction != TmdbActionNone)
 		return;
 #endif

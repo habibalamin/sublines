@@ -58,7 +58,7 @@
 - (void)requestSoapAction:(NSString*)soapAction ofType:(SublightAction)actionType withData:(NSData*)soapData {
 #ifdef DEBUG
 	assert (currentAction == SublightActionNone);
-#elif
+#else
 	if (currentAction != SublightActionNone)
 		return;
 #endif
