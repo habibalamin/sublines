@@ -106,12 +106,12 @@ NSInteger sort(id a, id b, void* p) {
 	NSMutableArray *subtitleFiles = [[NSMutableArray alloc] init];
 	@try {
 		for (id f in [extractedFiles objectEnumerator]) {
+			DLog (@"Subtitle File: %@", f);
+			
 			if (([[f uppercaseString]hasSuffix:[ext uppercaseString]]) && (![f hasPrefix:@"."]))
 				[subtitleFiles addObject:f];
 		}
-		
-		NSLog(@"%@", subtitleFiles);
-		
+			
 		if ([subtitleFiles count] == 1) {
 			//This is easy. Just copy the subtitle at movie location and run.
 			NSString *src = [NSString stringWithFormat:@"%@/%@", destPath, [subtitleFiles objectAtIndex:0]];

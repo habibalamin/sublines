@@ -63,6 +63,7 @@
 @synthesize labelCertification;
 @synthesize labelAdult;
 @synthesize labelLength;
+@synthesize labelVersion;
 
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
 	[self openMediaFile:filename];
@@ -78,6 +79,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	DLog(@"Application finished loading.");
 	
+	NSBundle *mb = [NSBundle mainBundle];
+	id ver = [mb objectForInfoDictionaryKey:@"CFBundleVersion"];
+	[labelVersion setStringValue:[NSString stringWithFormat:@"Version: %@", ver]];
+
 	working = NO;
 	
 	[self.window setAutorecalculatesContentBorderThickness:YES forEdge:NSMinYEdge];
@@ -592,7 +597,7 @@
 - (NSString*)extensionOfSubtitle:(NSString*)subtitleType {
 	NSString* upperSubtitleType = [subtitleType uppercaseString];
 	
-	if ([upperSubtitleType isEqualToString:@"SRt"])
+	if ([upperSubtitleType isEqualToString:@"SRT"])
 		return @"srt";
 
 	if ([upperSubtitleType isEqualToString:@"SUB"])

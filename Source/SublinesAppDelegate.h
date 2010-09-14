@@ -27,6 +27,7 @@
 	NSTextField *labelCertification;
 	NSTextField *labelAdult;
 	NSTextField *labelLength;
+	NSTextField *labelVersion;
 	
 	SLSublightClient *clientSublight;
 	SLTmdbClient *clientTmdb;
@@ -74,5 +75,6 @@
 @property (assign) IBOutlet NSTextField *labelCertification;
 @property (assign) IBOutlet NSTextField *labelAdult;
 @property (assign) IBOutlet NSTextField *labelLength;
+@property (assign) IBOutlet NSTextField *labelVersion;
 
 @end
