@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -274,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>6</integer>
 									<integer>2</integer>
 									<integer>0</integer>
 								</array>
@@ -310,12 +308,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Sublines.pch</string>
+								<string>SLUnzip.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Sublines.pch</string>
+										<string>SLUnzip.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>6FD4BA88123FE04500558EB9</string>
+										<string>6FD4BA94123FE0ED00558EB9</string>
 										<key>history</key>
 										<array>
 											<string>6F592A621237875300EDFC02</string>
@@ -347,11 +347,11 @@
 											<string>6F382F7C1237B66B00655DB4</string>
 											<string>6F593660123DCD5900E9AB90</string>
 											<string>6F59367D123DD01500E9AB90</string>
-											<string>6FD4BA5E123FDE4D00558EB9</string>
 											<string>6FD4BA7A123FDF7600558EB9</string>
 											<string>6FD4BA85123FE04500558EB9</string>
 											<string>6FD4BA86123FE04500558EB9</string>
-											<string>6FD4BA87123FE04500558EB9</string>
+											<string>6FD4BA92123FE0BE00558EB9</string>
+											<string>6FD4BA5E123FDE4D00558EB9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -549,13 +549,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>6FD4BA89123FE04500558EB9</string>
 		<string>6FD4BA46123FDC6E00558EB9</string>
 		<string>6FD4BA47123FDC6E00558EB9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>6FCCE75F122E837C00FA053E</string>
-		<string>/Users/hemantjangid/Documents/Playground/Sublines/Sublines.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/hemantjangid/Documents/Playground/Sublines/Sublines.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>113 107 1195 639 0 0 1360 746 </string>
