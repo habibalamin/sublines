@@ -106,7 +106,7 @@ NSInteger sort(id a, id b, void* p) {
 	NSMutableArray *subtitleFiles = [[NSMutableArray alloc] init];
 	@try {
 		for (id f in [extractedFiles objectEnumerator]) {
-			if (([f hasSuffix:ext]) && (![f hasPrefix:@"."]))
+			if (([[f uppercaseString]hasSuffix:[ext uppercaseString]]) && (![f hasPrefix:@"."]))
 				[subtitleFiles addObject:f];
 		}
 		

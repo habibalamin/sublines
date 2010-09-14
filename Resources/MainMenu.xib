@@ -2100,7 +2100,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="519031332">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Verson 1.0.0.1</string>
+								<string key="NSContents">Verson 1.0.0.2</string>
 								<reference key="NSSupport" ref="1020649442"/>
 								<reference key="NSControlView" ref="997170115"/>
 								<reference key="NSBackgroundColor" ref="461747154"/>

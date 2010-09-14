@@ -22,6 +22,7 @@
 - (void)getDownloadTicket;
 - (void)download;
 - (void)logout;
+- (NSString*)extensionOfSubtitle:(NSString*)subtitleType;
 
 - (void)imdbLookupForId:(NSString*)imdbId;
 - (void)loadImage:(NSString*)imgUrl;
@@ -577,14 +578,33 @@
 	}
 	
 	NSData *subtitleContents = [NSData dataFromBase64String:response.subtitleData];
-	
+	NSString *subtitleType = [[subtitles objectAtIndex:currentIndex] objectForKey:@"SubtitleType"];
+	NSString *subtitleExt = [self extensionOfSubtitle:subtitleType];
 	SLUnzip *unzipper = [[SLUnzip alloc] init];
-	NSError *subtitleError = [unzipper unzipSubtitles:subtitleContents ofExtension:@"srt" run:targetFile];
+	NSError *subtitleError = [unzipper unzipSubtitles:subtitleContents ofExtension:subtitleExt run:targetFile];
 	[unzipper release];
 	if (subtitleError != nil) {
 		[self showError:subtitleError];
 		return;
 	}
+}
+
+- (NSString*)extensionOfSubtitle:(NSString*)subtitleType {
+	NSString* upperSubtitleType = [subtitleType uppercaseString];
+	
+	if ([upperSubtitleType isEqualToString:@"SRt"])
+		return @"srt";
+
+	if ([upperSubtitleType isEqualToString:@"SUB"])
+		return @"sub";
+	
+	if ([upperSubtitleType isEqualToString:@"SUBVIEWER2"])
+		return @"sub";
+	
+	if ([upperSubtitleType isEqualToString:@"SAMI"])
+		return @"smi";
+	
+	return @"txt";
 }
 
 - (void)logoutDoneWithClient:(SLSublightClient*)client 
